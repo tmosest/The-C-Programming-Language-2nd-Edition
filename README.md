@@ -151,3 +151,74 @@ Notice that the program is less lines of code.
 For loops and while loops are interchange.
 
 1. <b>Exercise 1.5: </b> Modify the temperature conversion program to print the table in reverse order.
+
+### 1.4 Character Input and output
+
+We are now going to look at programs related to processing character data.
+
+Text input regardless of where it originates is dealt with as a stream of characters.
+A <b>text stream</b> is a sequence of characters divided into lines: each line consists of 0 or more characters followed by a new line character `\n`.
+It is the libraries responsibility to make each output and input stream conform to this model.
+
+The standard library provides several functions for reading and writing one character at a time.
+The following are the easiest:
+
+* `c = getchar()` reads the next input character.
+* `putchar(c)` prints a character each time it is called.
+
+#### 1.5.1 File Copying
+
+See [file-copying.c](./Chapter-1/file-copying.c) for a basic file copy program.
+
+This program simple outputs the inputs. 
+
+We use an int because it is big enough to store the EOF.
+
+EOF is an integer defined in stdio.h.
+
+A more experience programmer could have written the program in better way like [this](./Chapter-1/file-copying-better.c)
+
+In this verison we test for EOF as we grab them.
+
+1. <b>Exercise 1.6: </b> Verify that the expression getchar() != EOF is 0 or 1.
+2. <b>Exercise 1.7: </b> Write a program to print the value of EOF.
+
+#### 1.5.2 Character Counting
+
+Using the same logic as our last program we can easily count character.
+
+[character-counting.c](./Chapter-1/character-counting.c)
+
+In this example we see how we can use `++nc` or `nc++` to increment a varibale.
+We can also use `--nc` or `nc--` to decrement the variable.
+
+We use a `long` in this example because a `long` is always at least a 32 bit integer.
+
+In the next example we cope with even bigger integers by using a `double` and a for loop for fun.
+
+[character-counting-for.c](./Chapter-1/character-counting-for.c)
+
+### 1.5.3 Line Counting
+
+The next program counts the input lines. All we have to do is count `\n`.
+
+[line-counting.c](./Chapter-1/line-counting.c)
+
+1. <b>Exercise 1.8: </b> Write a program to count blanks, tabs, and new lines.
+2. <b>Exercise 1.9: </b> Write a program to copy input and output multiple spaces with a single space.
+3. <b>Exercise 1.10: </b> Write a program to replace all tabs with \t and do the same for backspaces and backslashes.
+
+#### 1.5.4 Word Counting
+
+We are now going to create a barebones version of the UNIX wc program.
+We define a word as a sequence of letters that does not contain a blank, tab, or newline.
+
+[word-counting.c](./Chapter-1/word-counting.c)
+
+Everytime the program incounters the character of a new word it counts a new word.
+Notice how we used `#define` to create a symbolic constant for 0 and 1 this is the prefered method!
+
+1. <b>Exercise 1.11: </b> How would you test the word count program? What kinds of input are most likely to uncover bugs if there are any?
+2. <b>Exercise 1.12: </b> Write a program that prints its input one word per line.
+
+
