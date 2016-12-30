@@ -1,5 +1,5 @@
 /**
-* A simple function to print out hello world.
+* A simple program to print out hello world.
 */
 #include <stdio.h>
 
