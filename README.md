@@ -290,9 +290,14 @@ Here is the actual code:
 Strings in C are stored in arrays with `\0` to mark their end.
 Here is an example of the string `"hello\n"`:
 
-|h|e|l|l|o|\n|\0|
+|---|---|---|---|---|---|---| 
+|h  | e | l | l | o | \n| \0|
 
 1. <b>Exercise 1.16: </b> Revise the main routine of the longest-line program so it will correctly print the length of arbitrarily long input lines.
 2. <b>Exercise 1.17: </b> Write a program to print all input lines that are longer that 80 characters.
 3. <b>Exercise 1.18: </b> Write a program to remove trailing blanks and tabs from each line of input, and delete entirely blank lines.
 4. <b>Exercise 1.19: </b> Write a function `reverse(s)` that reverses the character string s.
+
+### 1.10 External Variables and Scope
+
+The variables in main are private to main because main is a function.
