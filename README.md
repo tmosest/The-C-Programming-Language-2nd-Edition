@@ -302,3 +302,18 @@ Here is an example of the string `"hello\n"`:
 ### 1.10 External Variables and Scope
 
 The variables in main are private to main because main is a function.
+
+The values that are unique to a funciton are called <b>automatic variables</b> and they go away after the function is done with them.
+
+If we need that data to be persistent what we can do is declare <b>external variables</b> which are variables outside of a function as the next example shows.
+
+[print-longest-line-extern.c](./Chapter-1/print-longest-line-extern.c)
+
+Notes to access an external variable from within a function we must use the `extern` keyword.
+However this keyword can be omitted under the correct circumstances.
+
+1. <b>Exercise 1.20: </b> Write a program detab that replaces tabs in the input with the proper number of blank spaces.
+2. <b>Exercise 1.21: </b> Write a program entab that basically does the reverse of detab.
+3. <b>Exercise 1.22: </b> Write a program to "fold" long input lines into two or more shorter lines after the last non-blank character that occurs before the n-th column.
+4. <b>Exercise 1.23: </b> Write a program to remove all comments from a C program. Single lines and Multi lines too.
+5. <b>Exercise 1.24: </b> Write a program to check a C program for rudimentary syntax errors. 
