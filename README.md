@@ -266,3 +266,33 @@ However can also pass a reference to the original value using a pointer, which w
 
 This is not true for arrays though. When we call a function on an array we are passing a reference to the array in memory and not copying the array.
 
+
+### 1.9 Character Array - Strings
+
+The most common type of arrays in C is the array of characters.
+
+To illustrate this let's write a simple program to print the longest line from input.
+
+Here is the pseudo code:
+
+```
+while(there's another line)
+  if(it's longer than the previous longest line)
+    save it
+    save its lengths
+print longest line
+```
+
+Here is the actual code:
+
+[print-longest-line.c](./Chapter-1/print-longest-line.c)
+
+Strings in C are stored in arrays with `\0` to mark their end.
+Here is an example of the string `"hello\n"`:
+
+|h|e|l|l|o|\n|\0|
+
+1. <b>Exercise 1.16: </b> Revise the main routine of the longest-line program so it will correctly print the length of arbitrarily long input lines.
+2. <b>Exercise 1.17: </b> Write a program to print all input lines that are longer that 80 characters.
+3. <b>Exercise 1.18: </b> Write a program to remove trailing blanks and tabs from each line of input, and delete entirely blank lines.
+4. <b>Exercise 1.19: </b> Write a function `reverse(s)` that reverses the character string s.
