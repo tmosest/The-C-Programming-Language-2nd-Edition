@@ -235,3 +235,23 @@ Luckily the value for each digit is sequential.
 1. <b>Exercise 1.13: </b> Write a program to print a histogram of the lengths of words in its input.
   * A verticle diagram is more challenging than a horizontal one.
 2. <b>Exercise 1.14: </b> Write a program that prints a histogram of difference characters.
+
+### 1.7 Functions
+
+C has the ability to write functions similar to Fortan and Pascal.
+
+Let's write our own function that computers the a ^ b or a**b.
+
+[power.c](./Chapter-1/power.c)
+
+The template for a function is:
+
+```
+  return-type function-name(paramete declarations)
+  {
+    declarations;
+    statements;
+  }
+```
+
+1. <b>Exercise 1.15: </b> Rewrite the temperature conversion program to use a function to convert temperatures.
