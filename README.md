@@ -70,7 +70,7 @@ The `#include <stdio.h>` grabs the standard input/ouput library.
 
 1. <b>Exercise 1.1: </b> Experiment with leaving out parts of the program.
 
-2. <b>Exercise 2.2: </b> Experiment to find out what happens if you replace `/n` with a special character that DNE.
+2. <b>Exercise 1.2: </b> Experiment to find out what happens if you replace `/n` with a special character that DNE.
 
 ### 1.2 Variables and Arithmetic Expressions
 
@@ -102,8 +102,8 @@ Some importatnt things to take away:
   * <b>long</b> a long integer.
   * <b>double</b> a double-precision floating point.
 
-3. There is special reason for `5 * (fahr - 32) / 9;`
- * integer division tuncates so 5/9 would be 0.
+3. There is a special reason for `5 * (fahr - 32) / 9;`:
+ * Integer division tuncates so 5/9 would be 0.
 
 4. We get a more in depth view of how printf works:
   * See chapter 7 for more details.
@@ -123,3 +123,7 @@ Also there are some issues that we should fix:
   * To fix this we should use floating point numbers instead.
 
 See this better version: [farenheit-celsius-table-better.c](./Chapter-1/farenheit-celsius-table-better.c).
+
+1. <b>Exercise 1.3: </b> Modify temperature conversion to print out a table header.
+
+2. <b>Exercise 1.4: </b> Write a program to print celsius to fahr table.
