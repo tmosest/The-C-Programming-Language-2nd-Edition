@@ -198,7 +198,7 @@ In the next example we cope with even bigger integers by using a `double` and a 
 
 [character-counting-for.c](./Chapter-1/character-counting-for.c)
 
-### 1.5.3 Line Counting
+#### 1.5.3 Line Counting
 
 The next program counts the input lines. All we have to do is count `\n`.
 
@@ -221,4 +221,17 @@ Notice how we used `#define` to create a symbolic constant for 0 and 1 this is t
 1. <b>Exercise 1.11: </b> How would you test the word count program? What kinds of input are most likely to uncover bugs if there are any?
 2. <b>Exercise 1.12: </b> Write a program that prints its input one word per line.
 
+### 1.6 Arrays
 
+In this section we are going to write some code to print the number of times we see each digit.
+
+Instead of storing each occurence in a seperate variable we are going to store them in an array.
+
+[digit-counting.c](./Chapter-1/digit-counting.c)
+
+Notice that we are relying on the computation `c - '0'` to store the count in the correct array index.
+Luckily the value for each digit is sequential.
+
+1. <b>Exercise 1.13: </b> Write a program to print a histogram of the lengths of words in its input.
+  * A verticle diagram is more challenging than a horizontal one.
+2. <b>Exercise 1.14: </b> Write a program that prints a histogram of difference characters.
