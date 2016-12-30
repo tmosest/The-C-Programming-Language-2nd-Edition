@@ -38,3 +38,36 @@ This repository is a follow along with the book by [Brain W. Kernighan](https://
   * However most implementations come with basic libraries for these.
 
 9. C was redifined by the ANSI in 1983.
+
+## Chapter 1. A Tutorial Introduction
+
+This chapter will be a simple introduction. Most of the content will be repeated in later chapters.
+
+### 1.1 Getting started
+
+The best way to learn any langauge is by writing programs in it.
+
+We begin with the basic hello world program that prints out text onto the screen.
+
+[Working hello world program](./Chapter-1/helloworld.c)
+
+The following would have also worked:
+
+```c
+printf("hellow ");
+printf("world")
+printf("\n");
+```
+
+However the following wouldn't:
+
+```c
+printf("hello world
+");
+```
+
+The `#include <stdio.h>` grabs the standard input/ouput library.
+
+1. <b>Exercise 1.1: </b> Experiment with leaving out parts of the program.
+
+2. <b>Exercise 2.2: </b> Experiment to find out what happens if you replace `/n` with a special character that DNE.
