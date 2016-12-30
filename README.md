@@ -290,6 +290,7 @@ Here is the actual code:
 Strings in C are stored in arrays with `\0` to mark their end.
 Here is an example of the string `"hello\n"`:
 
+|   |   |   |   |   |   |   |
 |---|---|---|---|---|---|---| 
 |h  | e | l | l | o | \n| \0|
 
