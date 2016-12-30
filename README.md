@@ -255,3 +255,14 @@ The template for a function is:
 ```
 
 1. <b>Exercise 1.15: </b> Rewrite the temperature conversion program to use a function to convert temperatures.
+
+### 1.8 Arguements - Call by value
+
+One thing that is unique about C is that the values we pass the function are local copies.
+
+This leads to some interesting results that we could not perform in Fortan or Pascal, where the original values are passed as a reference.
+
+However can also pass a reference to the original value using a pointer, which we will see in Chapter 5.
+
+This is not true for arrays though. When we call a function on an array we are passing a reference to the array in memory and not copying the array.
+
