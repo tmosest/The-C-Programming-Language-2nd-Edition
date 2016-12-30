@@ -122,8 +122,32 @@ Also there are some issues that we should fix:
 2. Another issue that are results aren't accurate:
   * To fix this we should use floating point numbers instead.
 
+Some Notes about `printf()`:
+
+* `%d` prints as decimal integer.
+* `%6d` prints as decimal integer at least 6 wide.
+* `%f` prints as floating point.
+* `%6f` prints as flaoting point at least 6 wide.
+* `%.2f` prints as floating point 2 characters after the decimal point.
+* `%6.2f` prints as floating point at least 6 wide and 2 characters after the decimal point.
+* `%o` prints octals numbers.
+* `%x` prints hexadeciamal numbers.
+* `%c` prints chars.
+* `%s` prints strings.
+* `%%` prints the % sign.
+
 See this better version: [farenheit-celsius-table-better.c](./Chapter-1/farenheit-celsius-table-better.c).
 
 1. <b>Exercise 1.3: </b> Modify temperature conversion to print out a table header.
 
 2. <b>Exercise 1.4: </b> Write a program to print celsius to fahr table.
+
+### 1.3 The For Statement
+
+Now we can rewrite the same temperature table program using a [for loop](./Chapter-1/for-loop.c).
+
+Notice that the program is less lines of code.
+
+For loops and while loops are interchange.
+
+1. <b>Exercise 1.5: </b> Modify the temperature conversion program to print the table in reverse order.
