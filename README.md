@@ -131,7 +131,7 @@ Some Notes about `printf()`:
 * `%.2f` prints as floating point 2 characters after the decimal point.
 * `%6.2f` prints as floating point at least 6 wide and 2 characters after the decimal point.
 * `%o` prints octals numbers.
-* `%x` prints hexadeciamal numbers.
+* `%x` prints hexadecimal numbers.
 * `%c` prints chars.
 * `%s` prints strings.
 * `%%` prints the % sign.
@@ -325,7 +325,7 @@ Variables and constants are the basic data and objects manipulated in a program.
 Declarations list the variables to be used, and state what type they have and perhaps their initial values.
 
 ANSI made some important changes in this section:
-* `signed` and `unsigned` forms of integers, constants and hexadeciamal character constants.
+* `signed` and `unsigned` forms of integers, constants and hexadecimal character constants.
 * Floating-point operations may be done in single percision: there is also a `long double` type for higher precision.
 * String costants may be concatenated at compile time.
 * Enumerations have become part of the langauge.
@@ -368,3 +368,91 @@ The intent is that `short` and `long` should provide different lengths of intege
 Whether plain `char` is `signed` or `unsigned` is machine-dependent.
 
 1. <b>Exercise 2.1: </b> Write a program to determine the range of `char`, `short`, `int`, and `long` variables, both `signed` and `unsigned`. Also determine the ranges for floating-point types aswell.
+
+### 2.3 constants
+
+An integer constant like `1234` is an `int`. A `long` constant is written with a terminal `l` or `L` as in `123456789L`.
+`Unsigned` constants are written with a terminal `u` or `U`, and the suffix `ul` or `UL`, indicates `unsigned long`.
+
+Floating-point constants contain a decimal point (`123.4`) or an exponent (`1e-2`) or both.
+There type is `double` unless suffixed. The suffixes `f` and `F` indicates a float.
+`l` or `L` denotes a `long double`.
+
+The value of an integer can be specified in octal or hexadecimal instead of decimal.
+A leading `0X` means hexadecimal. For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex.
+Octal and hexadecimal constants may also be followed by `L` to make them long or `U` to make them unsigned.
+`0XFUL` is an `unsigned long` constant with the value 15 decimal.
+
+A <b>character constant</b> is an integer, written as one character within a single quotes, such as 'x'. 
+The value of a character constant is the numeric value of the character in the machine's character set.
+Character constants participate in numeric operations just as any other integers.
+
+Certain characters can be represented in character and strings constants by escape sequence like `\n`;
+these sequences look like two characters, but represent only one.
+
+In addition, an arbitrary byte-sized bit patten can be specified by:
+
+`'\ooo`
+
+where `ooo` is one to three octal digits (0...7) or by
+
+`\xhh`
+
+where `hh` is one or more hexadecimal digits (0...9, a...f, A...F). So we might write:
+
+```c
+  #define VTAB '\013'; /* ASCII Vertical tab*/
+  #define BELL '\007'; /* ASCII bell character */
+```
+
+or in hexadecimal:
+
+```c
+  #define VTAB '\xb';
+  #define BELL '\x7';
+```
+
+The complete list of escape sequences is:
+
+|character|name| 
+|---|---|
+|\a| alert (bell)|
+|\b|backspace|
+|\f|formfeed|
+|\n|newline|
+|\r|carriage return|
+|\t|horizontal tab|
+|\v| vertical tab|
+|\\|backslash|
+|\?|question mark|
+|\'|single quote|
+|\"|double quote|
+|\ooo|octal number|
+|\xhh|hexadecimal|
+|\0|zero character|
+
+A <b>constant expression</b> is an expression that involes only constants.
+
+A <b>string constant</b> or <b>string literal</b> is a sequence of zero or more characters.
+
+Note: `'x'` and `"x"` are not the same thing.
+
+There are also <b>enumeration constants</b>. An enumeration is a list of constant integer values.
+
+```c
+enum boolean {NO, YES};
+```
+
+NO is automatically 0 and YES is 1;
+It is also possible to define the constants in the enum as you declare it:
+
+```c
+enum escapes {BELL = '\a', BASKSPACE = '\b'}
+```
+
+If you only declare one value the next constants continues to increase. 
+In the next example FEB is 2, MAR = 3, etc.
+
+```c
+enum months {JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
+```
