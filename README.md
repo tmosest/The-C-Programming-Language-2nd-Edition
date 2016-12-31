@@ -515,3 +515,26 @@ else
 
 The `%` operator cannot be applied to `float` or `double`. The operations also follow the order of operations.
 
+### 2.6 Relational and Conditional Operations
+
+The relational operations are:
+
+```
+> >= < <=
+```
+
+They all have the same precendence. Just below in precendence are:
+
+```
+== !=
+```
+
+Relational operations are lower in precendence then arithmetic ones.
+
+More interesting are `&& ||` they are evaluated left to right and stop once the truth is known.
+
+`&&` has higher precendence than `||`.
+
+By definition the value is 1 if true and 0 if false.
+
+There is also the unary operator `!` which turns 0 into 1 and vice versa.
