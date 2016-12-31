@@ -456,3 +456,45 @@ In the next example FEB is 2, MAR = 3, etc.
 ```c
 enum months {JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
 ```
+### 2.4 Declarations
+
+All variables must be declared before use:
+
+```c
+int lower, upper, step;
+char c, line[1000];
+```
+
+Variables can be distributed among declarations in any fashion:
+
+```c
+int lower;
+int upper;
+int step;
+char c;
+char line[1000];
+```
+
+A variable may also be initialized in its declaration:
+
+```c
+char esc = '\\';
+int i = 0;
+int limit = MAXLINE + 1;
+float eps = 1.0e-5;
+```
+
+External and static variables are initialized automatically to 0;
+
+The qualifier `const` can be applied to the declaration of any variable to to specify that it cannot change.
+
+```c
+const double e = 2.17828182845905;
+const char msg[] = "warning: ";
+```
+
+The `const` declaration can also be used with array arguments, to indicate that the function doesn't change the array.
+
+```c
+int strlen(const char[]);
+```
