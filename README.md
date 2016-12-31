@@ -317,3 +317,28 @@ However this keyword can be omitted under the correct circumstances.
 3. <b>Exercise 1.22: </b> Write a program to "fold" long input lines into two or more shorter lines after the last non-blank character that occurs before the n-th column.
 4. <b>Exercise 1.23: </b> Write a program to remove all comments from a C program. Single lines and Multi lines too.
 5. <b>Exercise 1.24: </b> Write a program to check a C program for rudimentary syntax errors. 
+
+## Chapter 2. Types, Operators, and Expressions
+
+Variables and constants are the basic data and objects manipulated in a program.
+
+Declarations list the variables to be used, and state what type they have and perhaps their initial values.
+
+ANSI made some important changes in this section:
+* `signed` and `unsigned` forms of integers, constants and hexadeciamal character constants.
+* Floating-point operations may be done in single percision: there is also a `long double` type for higher precision.
+* String costants may be concatenated at compile time.
+* Enumerations have become part of the langauge.
+* Objects can be declared `const` preventing them from being changed.
+* The rules for automatic coercions among arithmetic types have been augmented to handle the richer set of types.
+
+### 2.1 Variable Names
+
+There are actually some restrictions to variable names that we didn't mention in Chapter 1:
+
+* Names must be letters and numbers.
+  * The first character must be a letter.
+* `_` Underscore counts as a character.
+* Lowecase and uppercase characters are distinct: so `x` is different from `X`.
+  * Typically all caps are constants and variables are lowercase.
+* Also keywords, like `if`, `long`, and `switch`, are reserved.
