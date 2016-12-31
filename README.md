@@ -538,3 +538,43 @@ More interesting are `&& ||` they are evaluated left to right and stop once the 
 By definition the value is 1 if true and 0 if false.
 
 There is also the unary operator `!` which turns 0 into 1 and vice versa.
+
+### 2.7 Type Conversions
+
+With operations types automatically become wider. For example a `char` would become an `int`.
+
+One example is the following function to convert a `string` to an `int`.
+
+```c
+/* atoi: convert s to integer */
+int atoi(char s[])
+{
+  int i, n;
+  n = 0;
+  for(i = 0; s[i] >= '0' && s[i] <= '9'; ++i)
+    n = 10 * n + (s[i] - '0');
+  return n;
+}
+```
+
+Another example of `char` to `int` is the following program:
+
+```c
+/* lower: convert c to lower case; ASCII only */
+int lower(int c)
+{
+  if(c >= 'A' && c <= 'Z')
+    return c + 'a' - 'A';
+  else
+    return c;
+}
+```
+
+We can force a typecase like in the following example:
+
+```c
+int n = 25;
+double root2 = sqrt( (double) n); // sqrt requires a double.
+```
+
+1. <b>Exercise 2.3: </b> Write a function `htoi(s)`, which converts a string of hexadecimal digits into its equivalent integer value.
