@@ -498,3 +498,20 @@ The `const` declaration can also be used with array arguments, to indicate that 
 ```c
 int strlen(const char[]);
 ```
+### 2.5 Arithmetic Operations
+
+The binary arithmetic operations are `+, -, *, /`, and the modulos operation `%`.
+
+Integer division truncates so the modulos operator get the remainder.
+
+For example, a year is a leap year if it is divisible by 4 but not divisible by 100, except if it is divisible by 400.
+
+```c
+if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+  printf("%d is a leap year.", year);
+else
+  printf("%d is not a leap year.", year);
+```
+
+The `%` operator cannot be applied to `float` or `double`. The operations also follow the order of operations.
+
