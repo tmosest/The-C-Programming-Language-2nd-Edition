@@ -342,3 +342,29 @@ There are actually some restrictions to variable names that we didn't mention in
 * Lowecase and uppercase characters are distinct: so `x` is different from `X`.
   * Typically all caps are constants and variables are lowercase.
 * Also keywords, like `if`, `long`, and `switch`, are reserved.
+
+### 2.2 Data Types and Sizes
+
+There are a few basic types in C:
+* `char` a single byte, can hold one character in the local character set.
+* `int` an integer, could be 16-bit or 32-bit.
+* `float` a single-precision floating point.
+* `double` double-precision floating point.
+
+In addition, there are a number of qualifiers that can be applied to these basic types:
+
+```c
+  short int sh;
+  long int counter;
+```
+
+The word `int` can be omitted in such declarartions and typically is.
+
+The intent is that `short` and `long` should provide different lengths of integers.
+`int` is usually the natural size of an integer in the machine, which could be 16-bit or 32-bit.
+`short` is often 16-bit and `long` should be 32-bit.
+
+`signed` and `unsigned` may be used as well. `unsinged` forces the the variable to be positive which allows it to be larger.
+Whether plain `char` is `signed` or `unsigned` is machine-dependent.
+
+1. <b>Exercise 2.1: </b> Write a program to determine the range of `char`, `short`, `int`, and `long` variables, both `signed` and `unsigned`. Also determine the ranges for floating-point types aswell.
