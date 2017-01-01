@@ -698,3 +698,30 @@ The `+=` is called an <b>assignment operator</b>.
 This is not unique to `+` we could do this with any operation.
 
 1. <b>Exercise 2.9: </b> In a two's complement number system. `x &= (x - 1)` deletes the rightmosst 1-bit in `x`. Explain why. Use this observation to write a faster version of bitcount.
+
+### 2.11 Conditional Expressions
+
+The statements:
+
+```c
+if(a > b)
+  z = a;
+else 
+  z = b;
+```
+
+compute in `z` the maximum of `a` and `b`. 
+
+The <b>conditional expression</b>, written with the ternary operator "?", provides an alternate way to write this and similar constructions.
+
+```
+expr1 ? expr2 : expr3
+```
+
+Thus we could set `z` to the maximum of `a` and `b` with:
+
+```c
+z = (a > b) > a : b; /* z = max(a, b) */
+```
+
+1. <b>Exercise 2.10: </b> Rewrite the function `lower`, which converts upper case letters to lower case, with a conditional expression instead of `if-else`.
