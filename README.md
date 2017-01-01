@@ -578,3 +578,58 @@ double root2 = sqrt( (double) n); // sqrt requires a double.
 ```
 
 1. <b>Exercise 2.3: </b> Write a function `htoi(s)`, which converts a string of hexadecimal digits into its equivalent integer value.
+
+### 2.8 Increment and Decrement Operations
+
+C has two increment operation `--` and `++` that subtract one and add one to the variable.
+
+These values can be applied as a prefix or postfix operator.
+
+if n is 5, then:
+
+```c
+x = n++;
+```
+
+will set x to 5 then increment n. As compared to:
+
+```c
+x = ++n;
+```
+
+which will increment n to 6 and then set x to n.
+
+Note (i + j)++ is illegal.
+
+Consider the following:
+
+```c
+/* squeeze: delete all c from s */
+void squeeze(char a[], int c)
+{
+  int i, j;
+  for(i = j = 0; s[i] != '\0'; i++)
+    if(s[i] != c)
+      s[j++] = s[i];
+  s[j] = '\0';
+}
+``` 
+
+As a third example consider the standard function `strcat(s,t)`, which concatenate string t and s.
+
+```c
+/* strcat: concatenate t to the end of s */
+void strcat(char s[], char t[])
+{
+  int i, j;
+  i = j = 0;
+  while(s[i] != '\0') /* find the end of s */
+    i++;
+  while((s[i++] = t[j++]) != '\0') /* copy */
+    ;
+}
+```
+As you can see after each copy both indexes are increased by 1 for the next asignment.
+
+1. <b>Exercise 2.4: </b> Write an alternate version of `squeeze(s1, s2)` that deletes each character in `s1` that matches any character in `s2`.
+2. <b>Exercise 2.5: </b> Write the function `any(s1, s2)`, which returns the first location in s1 where any character in s2 appears.
