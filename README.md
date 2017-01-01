@@ -633,3 +633,53 @@ As you can see after each copy both indexes are increased by 1 for the next asig
 
 1. <b>Exercise 2.4: </b> Write an alternate version of `squeeze(s1, s2)` that deletes each character in `s1` that matches any character in `s2`.
 2. <b>Exercise 2.5: </b> Write the function `any(s1, s2)`, which returns the first location in s1 where any character in s2 appears.
+
+### 2.9 Bitwise Operations
+
+C provides six operations for bit manipulation;
+* `&` bitwise AND.
+* `|` bitwise inclusive OR.
+* `^` bitwise exclusive OR.
+* `<<` left shift.
+* `>>` right shift.
+* `-` one's complement (unary).
+
+The bitwise AND is often used to mask off some set of bits;
+
+```c
+n = n & 0177; //sets to zero all but the low-order 7 bits of n
+```
+
+The bitwise OR is used to turn bits on:
+
+```c
+x = x | SET_ON; //set to one the bits that are one in SET_ON
+```
+
+The exclusive OR is used to set to 1 in each bit position where the operands have different bits.
+
+The shift operations shift all bits over the number specified. 
+
+```c
+x << 2; //shifts the values of x two positions, this is the same as multiplying by 4.
+```
+
+The unary operator yields the one's complement of an integer (converts each 1 bit to a 0 and vice-versa).
+
+As an example consider the function `getbits(x,p,n)` which return the (right adjusted) n-bit field of x tht begins at position p.
+For example: `getbits(x,4,3)` returns the three bits in bit positions 4, 3, and 2 right adjusted.
+
+```c
+/* getbits: get n bits from position p */
+unsigned getbits(unsigned x, int p, int n)
+{
+  return (x >> (p + 1 - n) & -(-0 << n));
+}
+```
+
+The expression `x >> (p + 1 - n)` moves the desired field to the end of the word. `-0` is a number containing all ones.
+`-0<<n` places zeros in the rightmost `n` bits; complementing that with `-` makes a mask with ones in the rightmost `n` bits.
+
+1. <b>Exercise 2.6: </b> Write a function `setbits(x,p,n,y)` that returns x with the n bits that begin at position p set to the rightmost n bits of y, leavin the other bits unchanged. 
+2. <b>Exercise 2.7: </b> Write a function `invert(x,p,n)` that returns x with the n bits that begin at position p inverted.
+3. <b>Exercise 2.8: </b> Write a function `rightrot(x,n)` that returns the value of the interger x rotated to the right by n bit positions.
