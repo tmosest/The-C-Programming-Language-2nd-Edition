@@ -741,9 +741,9 @@ Here is a table of precendence:
 | == != | left to right |
 | & | left to right |
 | ^ | left to right |
-| | | left to right |
+| \| | left to right |
 | && | left to right |
-| || | left to right |
+| \|| | left to right |
 | ?: | left to right |
 | = += -= *= /= %= &= ^= != <<= >>= | right to left |
 | , | left to right |
