@@ -683,3 +683,18 @@ The expression `x >> (p + 1 - n)` moves the desired field to the end of the word
 1. <b>Exercise 2.6: </b> Write a function `setbits(x,p,n,y)` that returns x with the n bits that begin at position p set to the rightmost n bits of y, leavin the other bits unchanged. 
 2. <b>Exercise 2.7: </b> Write a function `invert(x,p,n)` that returns x with the n bits that begin at position p inverted.
 3. <b>Exercise 2.8: </b> Write a function `rightrot(x,n)` that returns the value of the interger x rotated to the right by n bit positions.
+
+### 2.10 Assignment Operators and Expressions
+
+Just as a note we can compression some calculations:
+
+```c
+i = i + 2;
+i += 2; // this is the same as above.
+```
+
+The `+=` is called an <b>assignment operator</b>.
+
+This is not unique to `+` we could do this with any operation.
+
+1. <b>Exercise 2.9: </b> In a two's complement number system. `x &= (x - 1)` deletes the rightmosst 1-bit in `x`. Explain why. Use this observation to write a faster version of bitcount.
