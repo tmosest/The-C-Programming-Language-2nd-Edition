@@ -725,3 +725,25 @@ z = (a > b) > a : b; /* z = max(a, b) */
 ```
 
 1. <b>Exercise 2.10: </b> Rewrite the function `lower`, which converts upper case letters to lower case, with a conditional expression instead of `if-else`.
+
+### 2.12 Precendence and Order of Evaluation
+
+Here is a table of precendence:
+
+| Operations | Associativity |
+| ---------- | ------------- |
+| () [] -> . | left to right |
+| ! ~ ++ -- + - * & (type) sizeof | right to left |
+| * / % | left to right |
+| + - | left to right |
+| << >> | left to right |
+| < <= > >= | left to right |
+| == != | left to right |
+| & | left to right |
+| ^ | left to right |
+| | | left to right |
+| && | left to right |
+| || | left to right |
+| ?: | left to right |
+| = += -= *= /= %= &= ^= != <<= >>= | right to left |
+| , | left to right |
