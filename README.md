@@ -770,3 +770,41 @@ else
 ```
 
 The fact that an else will pair the closest if with there are no brackets, can lead to some tricky situations.
+
+### Else-If
+
+For more complicated decision making we have the `else if`:
+
+```c
+if(expression)
+  statement;
+else if(expression)
+  statement;
+else if(expression)
+  statment;
+else
+  statement;
+```
+
+To show off the power of `else-if` here is a copy of binary search:
+
+```c
+/* binarysearch: find x in v[0] <= v[1] .... <= v[n-1] */
+int binarysearch(int x, int v[], int n)
+{
+  int low, high, mid;
+  low = 0;
+  high = n - 1;
+  while(low <= high) {
+    mid = (low + high) / 2;
+    if(x < v[mid])
+      hight = mid - 1;
+    else if(x > v[mid])
+      low = mid + 1;
+    else 
+      return mid;
+  }
+  return - 1; /* no match */
+}
+```
+1. <b>Exercise 3.1: </b> Our binary search makes two tests inside the loop, when one would suffice. Write a version with only one test inside the loop for more tests outside the loop and compare the run time of them. 
