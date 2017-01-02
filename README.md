@@ -754,6 +754,6 @@ Control flow statments control the order in which statements are executed.
 
 ### 3.1 Statements and Blocks
 
-In C semicolons are expressions followed by a semi-colon become statements.
+In C semicolons `;` are expressions followed by a semi-colon become statements.
 
 Braces `{ }` are used to group declarations and statements together into a <b>compound statements</b> or <b>block</b>.
