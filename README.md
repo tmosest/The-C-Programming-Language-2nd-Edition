@@ -757,3 +757,16 @@ Control flow statments control the order in which statements are executed.
 In C semicolons `;` are expressions followed by a semi-colon become statements.
 
 Braces `{ }` are used to group declarations and statements together into a <b>compound statements</b> or <b>block</b>.
+
+### 3.2 If-Else
+
+The `if-else` statement is used to express decisions:
+
+```c
+if(expression)
+  statment;
+else
+  other_statement;
+```
+
+The fact that an else will pair the closest if with there are no brackets, can lead to some tricky situations.
