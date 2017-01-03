@@ -912,3 +912,10 @@ void itoa(int n, char s[])
 ### 3.7 Break and Continue 
 
 `break` exits a loop early while `continue` just advances one interation.
+
+
+### 3.8 Goto and Labels
+
+The `goto` statment allows code to break from many loops or advance to other parts of code as marked by a label.
+
+I am not going to put anything here because the book hardly talks about them and other books say they should never be used!
