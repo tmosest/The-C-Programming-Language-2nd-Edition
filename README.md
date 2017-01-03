@@ -771,7 +771,7 @@ else
 
 The fact that an else will pair the closest if with there are no brackets, can lead to some tricky situations.
 
-### Else-If
+### 3.3 Else-If
 
 For more complicated decision making we have the `else if`:
 
@@ -808,3 +808,55 @@ int binarysearch(int x, int v[], int n)
 }
 ```
 1. <b>Exercise 3.1: </b> Our binary search makes two tests inside the loop, when one would suffice. Write a version with only one test inside the loop for more tests outside the loop and compare the run time of them. 
+
+### 3.4 Switch 
+
+We can compress an `else if` statment into a `switch` tree.
+
+Here is a template for `switch`:
+
+```c
+swtich(expression) {
+  case: const-exp: statements;
+  case: const-exp: statements;
+  default: statement;
+}
+```
+
+The default is optional and defines what should happen if non of the options are discovered.
+
+Here is the digit count program from earlier using `switch`:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+  int c, i, nwhite, nother, ndigit[10];
+  nwhite = nother = 0;
+  while((c = getchar()) != EOF) {
+    swtich(c) {
+      case: '0': case '1': case '2': case '3':
+      case '4': case '5': case '6': case '7': case '8':
+      case '9':
+        ndigit[c - '0']++;
+        break;
+      case ' ':
+      case '\n':
+      case '\t':
+        nwhite++;
+        break;
+      defualt:
+        nother++;
+        break;
+    }
+  }
+  /* same print statements */
+  return 0;
+}
+```
+
+The `break` statement causes an immediate exit from the switch, to prevent other cases from running.
+* `break` can also be used to escape a while or for loop.
+
+1. <b>Exercise 3.2: </b> Write a function `escape(s,t)` that converts characters like newline and tab into visible escpae sequences like `\n` and `\t` as it copies the string from s to t.
