@@ -860,3 +860,17 @@ The `break` statement causes an immediate exit from the switch, to prevent other
 * `break` can also be used to escape a while or for loop.
 
 1. <b>Exercise 3.2: </b> Write a function `escape(s,t)` that converts characters like newline and tab into visible escpae sequences like `\n` and `\t` as it copies the string from s to t.
+
+### 3.5 Loops - While and For
+
+We have already encountered the `while` and `for` loop.
+
+So I'm just going to add some additional notes:
+
+```c
+/* This creates an infinite for-loop */
+for(;;) {}
+```
+
+1. <b>Exercise 3.3: </b> Write a function `expand(s1,s2)` that expands shorthand notation like a-z into the equivalent complete list abc...xyz.
+* Allow for upper case, lower case, and digits.
