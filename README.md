@@ -874,3 +874,37 @@ for(;;) {}
 
 1. <b>Exercise 3.3: </b> Write a function `expand(s1,s2)` that expands shorthand notation like a-z into the equivalent complete list abc...xyz.
 * Allow for upper case, lower case, and digits.
+
+### 3.6 Loops - Do While
+
+As we have seen `for` and `while` terminate at the top. If we want to reverse this we can use a `do while`:
+
+```c
+do 
+  statment
+while(expression);
+```
+
+`do while` is used much less than `for` and `while` but can be very valuable when needed.
+
+```c
+/* itoa: convert n to characters in s */
+void itoa(int n, char s[])
+{
+  int i, sign;
+  if((sign = n) < 0)
+    n = -n;
+  i = 0;
+  do {
+    s[i++] = n % 10 + '0';
+  } while((n /= 10) > 0);
+  if(sign < 0)
+    s[s++] = '-';
+  s[i] = '\0';
+  reverse(s);
+}
+```
+
+1. <b>Exercise 3.4: </b> In a two's complement number representation, our version of `itoa` doesn't handle the largest negative number. Why not? Fix this.
+2. <b>Exercise 3.5: </b> Write a function `itob(n,s,b)` that converts the integer `n` to a base `b` character representation in the string `s`.
+3. <b>Exercise 3.6: </b> Write a version of `itoa` that accepts arguments instead of two. The 3rd is the minimum field width; the converted number must be padded with blanks on the left if necessary to make wide enough.
