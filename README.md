@@ -908,3 +908,7 @@ void itoa(int n, char s[])
 1. <b>Exercise 3.4: </b> In a two's complement number representation, our version of `itoa` doesn't handle the largest negative number. Why not? Fix this.
 2. <b>Exercise 3.5: </b> Write a function `itob(n,s,b)` that converts the integer `n` to a base `b` character representation in the string `s`.
 3. <b>Exercise 3.6: </b> Write a version of `itoa` that accepts arguments instead of two. The 3rd is the minimum field width; the converted number must be padded with blanks on the left if necessary to make wide enough.
+
+### 3.7 Break and Continue 
+
+`break` exits a loop early while `continue` just advances one interation.
