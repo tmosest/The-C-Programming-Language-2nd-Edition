@@ -940,7 +940,7 @@ Note: If you want to compile multiple files together then do something like:
 
 1. <b>Exercise 4.1: </b> Write the function `strindex(s, t)`, which returns the position of the rightmost occurence of t in s, or -1 if there is none.
 
-### 4.2 Functions Returning Non-integers
+### 4.2 Functions Returning Non-Integers
 
 So far we have only seen functions that return `int` or no value (`void`).
 
