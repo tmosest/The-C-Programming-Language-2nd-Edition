@@ -919,3 +919,23 @@ void itoa(int n, char s[])
 The `goto` statment allows code to break from many loops or advance to other parts of code as marked by a label.
 
 I am not going to put anything here because the book hardly talks about them and other books say they should never be used!
+
+## Chapter 4. Functions and Program structures
+
+Functions break large computing tasks into smaller ones, and enable people to build on what other have done already.
+
+C has been designed to make functions efficient and easy to use; C programs generally consist of many small functions rather than a few big ones.
+
+A program may reside in one or more source files. Source files may be compiled separately or loaded togther.
+
+### 4.1 Basic Functions
+
+To begin with le us design and write a program to print each line of its input that contains a particular "pattern" or string of characters.
+* This is a special case of the UNIX program grep.
+
+[grep.c](./Chapter-4/grep.c)
+
+Note: If you want to compile multiple files together then do something like:
+* `cc main.c getline.c strindex.c`
+
+1. <b>Exercise 4.1: </b> Write the function `strindex(s, t)`, which returns the position of the rightmost occurence of t in s, or -1 if there is none.
