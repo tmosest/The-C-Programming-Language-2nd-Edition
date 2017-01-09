@@ -939,3 +939,16 @@ Note: If you want to compile multiple files together then do something like:
 * `cc main.c getline.c strindex.c`
 
 1. <b>Exercise 4.1: </b> Write the function `strindex(s, t)`, which returns the position of the rightmost occurence of t in s, or -1 if there is none.
+
+### 4.2 Functions Returning Non-integers
+
+So far we have only seen functions that return `int` or no value (`void`).
+
+Many numerical functions return precision point values like `sqrt`, `sin`, and `cos` return `double`.
+
+To illustrate this we write a function `atof(s)` which returns the double-precision floating-point equivalent.
+
+[atof.c](./Chapter-4/atof.c)
+
+1. <b>Exercise 4.2: </b> Extend `atof` to handle scientific notation of the form `123.45e-6`
+ * Where the floating-point number may be followed by `e` or `E` and an optionally signed exponent.
