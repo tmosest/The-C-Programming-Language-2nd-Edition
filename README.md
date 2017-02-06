@@ -952,3 +952,85 @@ To illustrate this we write a function `atof(s)` which returns the double-precis
 
 1. <b>Exercise 4.2: </b> Extend `atof` to handle scientific notation of the form `123.45e-6`
  * Where the floating-point number may be followed by `e` or `E` and an optionally signed exponent.
+
+### 4.3 External Variables
+
+External variables are defined outside of any function, and can be used for any function (these are great for Dynamic Programming).
+
+External variables are analogous to Fortran COMMON blocks or variables in the outermost block in Pascal.
+
+Because of the fact that they are global they provide an alternative to function arguments and return values for communicating data between functions.
+
+If we are sharing a large number of varibales between functions then they are more convient than long arguement lists.
+
+However they can lead to programs with too many data connections between functions.
+
+To show off this feature we are going to create a Reverse Polish Notation Calculator.
+
+```c
+// Example of operations
+1 2 - 4 5 + *
+``` 
+
+To implement this we push each operand onto a stack; when an operation arrives we pop the correct number of operands from the stack (two for a binary operator).
+For example in the above 1 and 2 are pushed and then replaced by their difference -1.
+Next 4 and 5 are push and then replaced with their sum 9.
+After that we take -1 and 9 and multiply them to get -9.
+
+Thus the main loop of this program is:
+
+```c
+while(next_operator_or_operand_is_not_EOF)
+  if(number)
+    push_it();
+  else if(operator)
+    pop_operands();
+    do_operation();
+    push_result();
+  else if(newline)
+    pop_and_print_top_of_stack();
+  else
+    error();
+```
+
+The operations for pushing and popping a stack are simple but it is best to include them in their own function.
+Instead of passing the stack reference back and forth along with the position for push and pop we could make this an external variable.
+
+The template would look like this:
+
+```c
+#includes
+#defines
+
+// function declaration for main
+main() { } 
+
+// External variables for push and pop
+void push(double f) {}
+double pop(void) {}
+
+int getop(char s[]) {}
+
+// routines called by getop
+```
+
+Later we will go into detail about how to split this up into multiple source files.
+
+The `main()` function is a loop containing a big `switch` statement.
+
+[See rpn.c](./Chapter-4/rpn.c)
+
+What are `getch()` and `ungetch()`? Programs often cannot tell if they have read enough input until they have read too much input.
+The solution is push back the unneeded char onto a buffer.
+
+The standar library provides a function `ungetc` that provides one character of push back. 
+We will go over this in chapter 7.
+
+1. <b>Exercise 4.3: </b> Add the modulus operator (%) and provisions to handle negative numbers.
+2. <b>Exercise 4.4: </b> Add commands to print the top element of the stack without poping, to duplicate, and swap two elements. Also add one to clear the stack.
+3. <b>Exercise 4.5: </b> Add access to library functions like `sin`, `exp`, and `pow`. See `math.h` in Appendix B, Section 4.
+4. <b>Exercise 4.6: </b> Add commands for handling variables. Add a variablefor the most recently printed value.
+5. <b>Exercise 4.7: </b> Write a routine `ungets(s)` that will push back an entire string onto input.
+6. <b>Exercise 4.8: </b> Suppose there will never be more that one character of pushback. Modify getch and ungetch accordingly.
+7. <b>Exercise 4.9: </b> Our `getch` and `ungetch` do not handle a push-back of EOF correctly. Decide how to fix this.
+8. <b>Exercise 4.10: </b> An alternate organization uses `getline` to read an entire input line; this makes `getch` and `ungetch` unneeded. Implement this approach.
