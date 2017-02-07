@@ -1034,3 +1034,77 @@ We will go over this in chapter 7.
 6. <b>Exercise 4.8: </b> Suppose there will never be more that one character of pushback. Modify getch and ungetch accordingly.
 7. <b>Exercise 4.9: </b> Our `getch` and `ungetch` do not handle a push-back of EOF correctly. Decide how to fix this.
 8. <b>Exercise 4.10: </b> An alternate organization uses `getline` to read an entire input line; this makes `getch` and `ungetch` unneeded. Implement this approach.
+
+### 4.4 Scope
+
+The functions and external variables that make up a C program need not all be compiled at the same time;
+The source text of the program may be kept in several files, and previously compiled routines may be loaded from libraries.
+
+This leads to some questions of interest:
+
+* How are declarartions written so that all the pieces will be properly declared during compilation?
+* How are declarartions arranged so that all of the pieces will be properly connected when the program is loaded?
+* How are declarations organzied so there is only one copy?
+* How are external variables initialized?
+
+To discuss this topic let us reorganize the calculator program into several files.
+
+The `scope` of a name is the part of the program within which the name can be used.
+For an automatic variable declared at the beginning of a function, the scope is the function in which the name is declared.
+Local variables of the same name in different functions are unrelated. The same is true of the parameters of the function, which are in effect local variables.
+
+The scope of an external variable or a function lasts from the point at whioch it is declared to the end of the file being compiled.
+For example, if main, sp, val, push, and pop are defined in one file, in the order shown:
+
+```c
+main() {}
+
+int sp = 0;
+double val[MAXVAL];
+
+void push(){}
+double pop(){}
+```
+
+then the variables sp and val may be used in push and pop and simply by naming them; no further declarartions are needed. But these names are not visible in main, nor are push and pop themselves.
+
+On the other hand, if an external variable is to be referred to before it is defined, or if it is defined in a different source file from the one where it is being used, then an  `extern` declarartion is mandatory.
+
+It is important to distinguish between the `declarations` of an external variable and its `definition`.
+
+If the lines:
+
+```c
+int sp;
+double val[MAXVAL];
+```
+
+Appear outside of any function, they define the external variables sp and val, cause storage to be set aside, and also serve as the declaration for the rest of the source file.
+
+On the other hand:
+
+```c
+extern int sp;
+extern double val[];
+```
+
+declare for the rest of the source file that sp is an int and that val is a double array, but they do not create the variables or reserve the storage for them.
+
+There must be only one definition of an external variable among all of the files that make up the source program: other files may contrian `extern` declarations to access it.
+
+We could have seperated the files as mention earlier into:
+
+```c
+// file 1:
+extern int sp;
+extern double val[];
+
+void push() {}
+double pop() {}
+
+// file 2:
+int sp = 0;
+double val[MAXVAL];
+```
+
+Because of the fact that the extern statemet in file 1 is before the push and pop method they will work fine.
